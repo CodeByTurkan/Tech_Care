@@ -155,7 +155,7 @@ let qraf = new Chart(ctx, {
         pointRadius:9,
         tension:0.5
         // cubic-baser - css de
-      },
+      }, 
       {
         label: 'Diastolic',
         data: [163, 151, 168, 158, 117, 115, 133, 149, 165],
@@ -217,3 +217,4 @@ let qraf = new Chart(ctx, {
     }
   });
 
+// blah
