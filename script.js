@@ -146,7 +146,7 @@ let qraf = new Chart(ctx, {
       datasets: [
         {
         label: 'Systolic',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [95, 120,77, 92, 95, 80, 68, 70, 95],
         borderWidth: 3,
         borderColor:"#E66FD2",
         pointBorderWidth:2, 
@@ -158,7 +158,7 @@ let qraf = new Chart(ctx, {
       },
       {
         label: 'Diastolic',
-        data: [1, 6, 2, 5, 18, 10],
+        data: [163, 151, 168, 158, 117, 115, 133, 149, 165],
         borderWidth: 3,
         borderColor:"#7e6cab",
         pointBorderWidth:2, 
@@ -217,8 +217,3 @@ let qraf = new Chart(ctx, {
     }
   });
 
-
-
-//   i have learned how to find users based on their index
-
-// new changes
