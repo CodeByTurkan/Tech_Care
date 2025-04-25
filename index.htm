@@ -31,8 +31,10 @@
     <main class="mx-auto max-w-[90%] flex justify-between  gap-3 m-3" >
         <div class="bg-white w-[23%] rounded-xl py-5 px-4">
             <div class="flex justify-between items-center ">
-                <h3 class="font-bold  text-lg">Patients</h3>
-                <div><i class="fa-solid fa-magnifying-glass"></i></div>
+                <h3 class="font-bold searchPatient text-lg">Patients</h3>
+                <input class="hidden rounded-3xl border focus:outline-none px-2 text-sm border-gray-300" type="text" name="" id="searchInp">
+                <div onclick="showInput()" id="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
             </div>
             <div class="patientList mt-10 flex-col overflow-y-scroll">
 

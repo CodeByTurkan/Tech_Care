@@ -14,7 +14,7 @@ fetch("https://fedskillstest.coalitiontechnologies.workers.dev", {
         // bu data yuxaridaki datadi.
         // bir array yaradirsan ve push edib arraya datani , ekranda cixarda bilirsen. Fetchlerde bele etmek lazimdir
         getUsers();
-        // gozleyirem fetchden data gelir sonra sorgunu cagiriram
+        // gozleyirem fetchden data gelir sonra onu gosterirem ekrranda
     })
     console.log(patients);
     
@@ -44,9 +44,11 @@ const labResults = document.getElementById('labResults');
 
 
 
-function getUsers() {
+
+function getUsers(filteredPatients = patients) {
+    // bu usulla yazmaq searchdan datani tapa bilmek ucundu
     let code = ''
-    patients.forEach((elm, index )=> {
+    filteredPatients.forEach((elm, index )=> {
         code += 
         `  <div onclick="getBloodPressure(${index})" class=" hover:bg-[#01F0D0] rounded-lg flex items-center p-2">
                 <img class="pr-2 w-12" src="${elm.profile_picture}" alt="">
@@ -136,8 +138,23 @@ function getBloodPressure(index) {
 
     })
     labResults.innerHTML  = code1
-    
 }
+
+    const search = document.getElementById('search');
+    const searchInp = document.getElementById('searchInp');
+    const searchPatient = document.querySelector('.searchPatient');
+    function showInput() {
+        searchPatient.classList.toggle('hidden')
+        searchInp.classList.toggle('hidden')
+    }
+
+    function findPatients() {
+        const searchInput = searchInp.value.toLowerCase()
+        let lookforPatients = patients.filter(elm => elm.name.toLowerCase().includes(searchInput))
+        getUsers(lookforPatients)
+        
+    }
+    searchInp.addEventListener("input", findPatients)
 
 let qraf = new Chart(ctx, {
     type: 'line',
@@ -216,5 +233,3 @@ let qraf = new Chart(ctx, {
         }
     }
   });
-
-// blah
